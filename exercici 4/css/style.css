@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #fdeed4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #6b1e2e;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+header {
+  background-image: url(../imatges/headerweb.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  padding: 30px;
+  min-height: 250px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5px;
+}
+
+.caja-texto {
+  backdrop-filter: blur(40px);
+  color: #883747;
+  text-shadow: #000000 1px 1px 2px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 4px;
+  max-width: 115%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   ESTRUCTURA GENERAL (SECTION, NAV, ARTICLE)
+   ========================================================================== */
+section {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row; /* En PC: El nav es queda a l'esquerra i l'article a la dreta */
+}
+
+article {
+  border-radius: 4px;
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #fdeed4;
+  padding: 10px;
+}
+
+/* ==========================================================================
+   BARRA DE NAVEGACIÓ (En vertical, botons grans)
+   ========================================================================== */
+nav {
+  margin-top: 2.5px;
+  margin-bottom: 2.5px; 
+  border-radius: 4px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #c9b79c;
+  padding: 20px;
+  display: flex;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex: wrap; /* Els botons van un sota de l'altre */
+  gap: 8px;              
+  padding: 0;
+  margin: 0;
+  width: 140px;          /* Amplada del menú fixa en ordinadors */
+}
+
+nav a {
+  display: block;         
+  text-align: center;     
+  padding: 14px 24px;    /* Botons grans */
+  background-color: #c7bfb6;
+  color: #4a3f35;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 16px;       
+  transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:hover {
+  background-color: #4a3f35;
+  color: #ffffff;
+}
+
+/* Estil per al botó actiu de la pàgina (Afegeix class="active" a l'HTML) */
+nav a.active {
+  background-color: #6b1e2e; 
+  color: #ffffff;            
+  cursor: default;           
+}
+
+/* ==========================================================================
+   GALERIA D'IMATGES
+   ========================================================================== */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  width: 16.666%;
+  padding: 8px;
+}
+
+.gallery-item a {
+  display: block;
+  text-decoration: none;
+  border-bottom: none;
+  overflow: hidden; 
+  border-radius: 4px;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;         
+  aspect-ratio: 1 / 1;  
+  object-fit: cover;    
+  box-shadow: 0 4px 10px rgba(59, 47, 42, 0.35);
+  filter: sepia(60%) saturate(110%);   
+  transition: filter 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img:hover {
+  filter: none;
+  transform: scale(1.06);
+  box-shadow: 0 8px 18px rgba(59, 47, 42, 0.5);
+}
+
+.desc {
+  padding: 10px 5px;
+  text-align: center;
+  font-size: 14px;
+  color: #3b2f2a;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+  margin-top: 2.5px;
+  border-radius: 4px;
+  background-color: #877861;
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (SINCRO RESPONSIVE)
+   ========================================================================== */
+
+/* TAULETA i PANTALLES PETITES: Menys de 768px */
+@media only screen and (max-width: 768px) {
+  section {
+    flex-direction: column;      /* CANVI: Modifica l'estructura a columna per posar el nav A SOBRE de l'article */
+  }
+
+  nav {
+    margin-bottom: 10px;    
+    width: 100%;                 /* El contenidor nav passa a ocupar el 100% de l'ample */
+    padding: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;      /* MANTÉ EN VERTICAL: Els botons es queden un sota de l'altre */
+    width: 100%;                 /* S'estira per ocupar tota l'amplada de la pantalla */
+  }
+
+  nav ul li {
+    width: 100%;                 /* Cada botó omple l'amplada horitzontal completa */
+  }
+
+  .gallery-item {
+    width: 33.333%;              /* Galeria a 3 imatges per línia al mateix temps */
+  }
+}
+
+/* MÒBIL: Pantalles de 480px o menys */
+@media only screen and (max-width: 480px) {
+  .gallery-item {
+    width: 100%;                 /* Galeria a 1 imatge per línia */
+  }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>EX3 Casado</title>
+</head>
+
+<body>
+    <header class="header-fondo">
+        <!-- Esta es la caja de texto -->
+        <div class="caja-texto">
+            <h1>Sant Jaume dels Domenys</h1>
+        </div>
+    </header>
+
+    <section>
+        <nav class="barra-navegacio">
+            <ul>
+                <li><a href="index.html">Index</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="llocs.html">Llocs</a></li>
+                <li><a href="plats.html">Plats</a></li>
+                <li><a href="contacte.html">Contacte</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <div class="secció formulari">
+                <form id="formulari" name="formulari" action="./gracies.html" method="GET">
+                    <div class="group-input">
+                        <label for="nom" class="obligatori">Nom i cognoms:</label>
+                        <input type="text" id="nom" name="nom" maxlength="125" placeholder="Ex: Albert Casado" required>
+                        <span class="missatge-error">Si us plau, introdueixi el seu nom</span>
+                    </div>
+                    <div class="group-input">
+                        <label for="correu" class="obligatori">Correu electrònic:</label>
+                        <input type="email" id="correu" name="correu" maxlength="60" placeholder="Ex: acasado1@ies-eugeni.cat" required>
+                        <span class="missatge-error">Si us plau, introdueixi una adreça de correu vàlida</span>
+                    </div>
+                    <div class="group-input">
+                        <label for="NIE" class="obligatori">NIE:</label>
+                        <input type="text" id="NIE" name="NIE" maxlength="12" placeholder="Ex: X1234567Y" pattern="[A-Z0-9][0-9]{7}[A-Z]" required>
+                        <span class="missatge-error">Introdueixi un NIE vàlid</span>
+                    </div>
+                    <div class="group-input">
+                        <label for="causa" class="obligatori">Causa:</label>
+                        <input type="text" id="causa" name="causa" maxlength="300" required>
+                        <span class="missatge-error">Introdueixi la cause de contacte</span>
+                    </div>
+                    <button type="submit" value="Enviar">Enviar</button>
+                    <button type="reset" value="esborrar">Esborrar</button>
+                </form>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+        <p>Fet per Albert Casado</p>
+    </footer>
+
+</body>
+
+</html>
